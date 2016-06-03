@@ -1,14 +1,6 @@
 from tensorflow.examples.tutorials.mnist import input_data
-mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
-
 from sklearn import svm
-
-#X_train = preprocessing.scale(X_train)
-#X_test = preprocessing.scale(X_test)
-
 import tensorflow as tf
-sess = tf.InteractiveSession()
-
 import numpy as np
 
 number_of_features = 128
@@ -16,62 +8,18 @@ batch_size = 55
 batches_in_epoch = 1000
 train_size = batches_in_epoch * batch_size
 test_size = 10000
+experiment_accuracy = [0, 0, 0]
 
-print("\n###################\nBegning the SVM experiment without using features from ConvNet\n###################")
+mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 
-train_features = np.zeros((train_size, 28*28), dtype=float)
-train_labels = np.zeros(train_size, dtype=int)
-converter = np.array([0,1,2,3,4,5,6,7,8,9])
+sess = tf.InteractiveSession()
 
-for i in range(batches_in_epoch):
-    train_batch = mnist.train.next_batch(batch_size)
-    features_batch = train_batch[0]
-    labels_batch = train_batch[1]
-    for j in range(batch_size):
-        for k in range(28*28):
-            train_features[batch_size * i + j, k] = features_batch[j, k]
-        train_labels[batch_size * i + j] = np.sum(np.multiply(converter, labels_batch[j, :]))
-
-print("\ntrain_features")
-print(train_features.shape)
-print(type(train_features))
-print(np.mean(train_features))
-print(train_features)
-
-print("\ntrain_labels")
-print(train_labels.shape)
-print(type(train_labels))
-print(np.mean(train_labels))
-print(train_labels)
-
-test_features = np.zeros((test_size, 28*28), dtype=float)
-test_labels = np.zeros(test_size, dtype=int)
-
-test_features = mnist.test.images
-for j in range(test_size):
-    test_labels[j] = np.sum(np.multiply(converter, mnist.test.labels[j, :]))
-
-print("\ntest_features")
-print(test_features.shape)
-print(type(test_features))
-print(np.mean(test_features))
-print(test_features)
-
-print("\ntest_labels")
-print(test_labels.shape)
-print(type(test_labels))
-print(np.mean(test_labels))
-print(test_labels)
-
-clf = svm.SVC()
-clf.fit(train_features, train_labels)
-accuracy = clf.score(test_features, test_labels)
-print("\nACCURACY = ", accuracy)
-
-print("\n###################\nBuilding the ConvNet to use as Feature Extractor\n###################")
-
-x = tf.placeholder(tf.float32, shape=[None, 784])
-y_ = tf.placeholder(tf.float32, shape=[None, 10])
+def printscreen(ndarrayinput, stringinput):
+    print("\n"+stringinput)
+    print(ndarrayinput.shape)
+    print(type(ndarrayinput))
+    print(np.mean(ndarrayinput))
+    print(ndarrayinput)
 
 def weight_variable(shape):
     initial = tf.truncated_normal(shape, stddev=0.1)
@@ -86,6 +34,11 @@ def conv2d(x, W):
 
 def max_pool_2x2(x):
     return tf.nn.max_pool(x, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
+
+print("\n###################\nBuilding ConvNet to use as Feature Extractor\n###################")
+
+x = tf.placeholder(tf.float32, shape=[None, 784])
+y_ = tf.placeholder(tf.float32, shape=[None, 10])
 
 x_image = tf.reshape(x, [-1,28,28,1])
 
@@ -120,24 +73,61 @@ correct_prediction = tf.equal(tf.argmax(y_conv,1), tf.argmax(y_,1))
 accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 sess.run(tf.initialize_all_variables())
-print()
 
-for i in range(5*batches_in_epoch):
+print("\n###################\nSVM Train/Test without Features from ConvNet\n###################")
+
+converter = np.array([0,1,2,3,4,5,6,7,8,9])
+
+train_features = np.zeros((train_size, 28*28), dtype=float)
+train_labels = np.zeros(train_size, dtype=int)
+
+for i in range(batches_in_epoch):
+    train_batch = mnist.train.next_batch(batch_size)
+    features_batch = train_batch[0]
+    labels_batch = train_batch[1]
+    for j in range(batch_size):
+        for k in range(28*28):
+            train_features[batch_size * i + j, k] = features_batch[j, k]
+        train_labels[batch_size * i + j] = np.sum(np.multiply(converter, labels_batch[j, :]))
+
+printscreen(train_features, "train_features")
+
+printscreen(train_labels, "train_labels")
+
+test_features = np.zeros((test_size, 28*28), dtype=float)
+test_labels = np.zeros(test_size, dtype=int)
+
+test_features = mnist.test.images
+for j in range(test_size):
+    test_labels[j] = np.sum(np.multiply(converter, mnist.test.labels[j, :]))
+
+printscreen(test_features, "test_features")
+
+printscreen(test_labels, "test_labels")
+
+clf = svm.SVC()
+clf.fit(train_features, train_labels)
+experiment_accuracy[0] = clf.score(test_features, test_labels)
+print("\nSVM ACCURACY =", experiment_accuracy[0])
+
+print("\n###################\nConvNet Train/Test for Features Extraction\n###################\n")
+
+for i in range(4*batches_in_epoch):
     batch = mnist.train.next_batch(batch_size)
     if i%batches_in_epoch == 0:
-        train_accuracy = accuracy.eval(feed_dict={
-            x: batch[0], y_: batch[1], keep_prob: 1.0})
+        train_accuracy = accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
         print("epoch %d, training accuracy %g" % (i / batches_in_epoch, train_accuracy))
     train_step.run(feed_dict={x: batch[0], y_: batch[1], keep_prob: 0.5})
 
-print("test accuracy %g"%accuracy.eval(feed_dict={
-    x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0}))
+experiment_accuracy[1] = accuracy.eval(feed_dict={x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0})
+print("\nConvNet ACCURACY = %g" % experiment_accuracy[1])
 
-print("\n###################\nBegning the SVM experiment using features from ConvNet\n###################")
+print("\n###################\nSVM Train/Test with Features from ConvNet\n###################")
+
+converter = np.array([0,1,2,3,4,5,6,7,8,9])
 
 train_features_cnn = np.zeros((train_size, number_of_features), dtype=float)
 train_labels_cnn = np.zeros(train_size, dtype=int)
-converter = np.array([0,1,2,3,4,5,6,7,8,9])
 
 for i in range(batches_in_epoch):
     train_batch = mnist.train.next_batch(batch_size)
@@ -148,36 +138,29 @@ for i in range(batches_in_epoch):
             train_features_cnn[batch_size * i + j, k] = features_batch[j, k]
         train_labels_cnn[batch_size * i + j] = np.sum(np.multiply(converter, labels_batch[j, :]))
 
-print("\ntrain_features_cnn")
-print(train_features_cnn.shape)
-print(type(train_features_cnn))
-print(train_features_cnn)
+printscreen(train_features_cnn, "train_features_cnn")
 
-print("\ntrain_labels_cnn")
-print(train_labels_cnn.shape)
-print(type(train_labels_cnn))
-print(train_labels_cnn)
+printscreen(train_labels_cnn, "train_labels_cnn")
 
 test_features_cnn = h_fc1.eval(feed_dict={x: mnist.test.images})
 test_labels_cnn = np.zeros(test_size, dtype=int)
+
 for j in range(test_size):
     test_labels_cnn[j] = np.sum(np.multiply(converter, mnist.test.labels[j, :]))
 
-print("\ntest_features_cnn")
-print(test_features_cnn.shape)
-print(type(test_features_cnn))
-print(test_features_cnn)
+printscreen(test_features_cnn, "test_features_cnn")
 
-print("\ntest_labels_cnn")
-print(test_labels_cnn.shape)
-print(type(test_labels_cnn))
-print(test_labels_cnn)
+printscreen(test_labels_cnn, "train_labels_cnn")
 
 clf = svm.SVC()
 clf.fit(train_features_cnn, train_labels_cnn)
-accuracy = clf.score(test_features_cnn, test_labels_cnn)
-print("\nACCURACY = ", accuracy)
+experiment_accuracy[2] = clf.score(test_features_cnn, test_labels_cnn)
+print("\nConvNetSVM ACCURACY =", experiment_accuracy[2])
+
+print("\n###################\nEnding Experiment\n###################\n")
+
+print(experiment_accuracy)
+
+print()
 
 sess.close()
-
-print("\n###################\nEnding the program\n###################\n")
