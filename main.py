@@ -274,18 +274,20 @@ plt.rc('ytick', labelsize=8)
 plt.rc('axes', labelsize=8)
 #plt.tight_layout()
 
-fig=plt.figure()
+width = 3.487
+height = width / 1.618
+
+fig=plt.figure(figsize=(width,height))
+#fig=plt.figure()
 fig.subplots_adjust(left=.15, bottom=.16, right=.99, top=.97)
 
-ax = df_global.plot.box()
+#ax = df_global.plot.box()
+ax = df_global.plot.box(figsize=(width,height))
 ax.set_xlabel("X label")
 ax.set_ylabel("Y label")
 ax.set_title("Title")
 
-width = 3.487
-height = width / 1.618
 fig.set_size_inches(width, height)
-
 plt.savefig("df_global.pdf")
 
 print("\n############################\nStoping\n############################\n")
