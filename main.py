@@ -20,6 +20,12 @@ import pandas as pd
 from tensorflow.examples.tutorials.mnist import input_data
 from sklearn import svm
 import time
+from elm import GenELMClassifier
+from random_layer import MLPRandomLayer
+import matplotlib.pyplot as plt
+import matplotlib as mpl
+mpl.style.use('classic')
+mpl.use('pdf')
 
 NUMBER_OF_FEATURES = 128
 BATCH_SIZE = 55
@@ -31,7 +37,9 @@ NUMBER_OF_EXPERIMENTS = 2
 
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 converter = np.array([0,1,2,3,4,5,6,7,8,9])
-experiment_accuracy = {"Linear Kernel SVM":0, "Gaussian Kernel SVM":0, "ConvNet":0, "ConvNetSVM":0}
+
+svm_accuracy = {"LK-SVM":0, "GK-SVM":0}
+experiment_accuracy = {"1024HL-ELM":0, "4096HL-ELM":0, "ConvNet":0, "ConvNetSVM":0}
 
 train_features = np.zeros((TRAIN_SIZE, 28 * 28), dtype=float)
 train_labels = np.zeros(TRAIN_SIZE, dtype=int)
@@ -64,8 +72,7 @@ def max_pool_2x2(x):
     return tf.nn.max_pool(x, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
 
 def SVM(krnl):
-    print("\n##################################\n", krnl, "kernel SVM Train/Test\n##################################")
-    initial_time = time.time()
+    print("\n##################################\n", krnl, "Kernel SVM Train/Test\n##################################")
 
     for i in range(BATCHES_IN_EPOCH):
         train_batch = mnist.train.next_batch(BATCH_SIZE)
@@ -85,7 +92,9 @@ def SVM(krnl):
     print_screen(test_features, "test_features")
     print_screen(test_labels, "test_labels")
 
-    clf = svm.SVC(kernel=krnl, gamma=0.125)
+    initial_time = time.time()
+
+    clf = svm.SVC(kernel=krnl)
     clf.fit(train_features, train_labels)
     training_time = time.time()-initial_time
     print("\nTraining Time = ", training_time)
@@ -94,11 +103,47 @@ def SVM(krnl):
     test_time = time.time() - (training_time + initial_time)
     print("\nTest Time = ", test_time)
 
-    print("\n", krnl, "kernel SVM Accuracy =", accuracy)
+    print("\n", krnl, "kernel SVM accuracy =", accuracy)
+    return accuracy
+
+def ELM(nodes):
+    print("\n############################\n", nodes, "Hidden Layer Nodes ELM Train/Test\n############################")
+
+    for i in range(BATCHES_IN_EPOCH):
+        train_batch = mnist.train.next_batch(BATCH_SIZE)
+        features_batch = train_batch[0]
+        labels_batch = train_batch[1]
+        for j in range(BATCH_SIZE):
+            for k in range(28*28):
+                train_features[BATCH_SIZE * i + j, k] = features_batch[j, k]
+            train_labels[BATCH_SIZE * i + j] = np.sum(np.multiply(converter, labels_batch[j, :]))
+
+    print_screen(train_features, "train_features")
+    print_screen(train_labels, "train_labels")
+
+    for j in range(TEST_SIZE):
+        test_labels[j] = np.sum(np.multiply(converter, mnist.test.labels[j, :]))
+
+    print_screen(test_features, "test_features")
+    print_screen(test_labels, "test_labels")
+
+    initial_time = time.time()
+
+    srhl_tanh = MLPRandomLayer(n_hidden=nodes, activation_func="tanh")
+    clf = GenELMClassifier(hidden_layer=srhl_tanh)
+    clf.fit(train_features, train_labels)
+    training_time = time.time()-initial_time
+    print("\nTraining Time = ", training_time)
+
+    accuracy = clf.score(test_features, test_labels)
+    test_time = time.time() - (training_time + initial_time)
+    print("\nTest Time = ", test_time)
+
+    print("\n", nodes, "hidden layer nodes ELM accuracy =", accuracy)
     return accuracy
 
 def ConvNet(number_of_training_epochs):
-    print("\n##################################\nConvNet Train/Test\n##################################\n")
+    print("\n############################\nConvNet Train/Test\n############################\n")
     initial_time = time.time()
 
     for i in range(number_of_training_epochs * BATCHES_IN_EPOCH):
@@ -114,11 +159,11 @@ def ConvNet(number_of_training_epochs):
     test_time = time.time() - (training_time + initial_time)
     print("\nTest Time = ", test_time)
 
-    print("\nConvNet Accuracy =", accuracy)
+    print("\nConvNet accuracy =", accuracy)
     return accuracy
 
 def ConvNetSVM():
-    print("\n##################################\nConvNetSVM Train/Test\n##################################")
+    print("\n############################\nConvNetSVM Train/Test\n############################")
     initial_time = time.time()
 
     for i in range(BATCHES_IN_EPOCH):
@@ -149,14 +194,14 @@ def ConvNetSVM():
     test_time = time.time() - (training_time + initial_time)
     print("\nTest Time = ", test_time)
 
-    print("\nConvNetSVM Accuracy =", accuracy)
+    print("\nConvNetSVM accuracy =", accuracy)
     return accuracy
 
-print("\n##################################\nStarting\n##################################\n")
+print("\n############################\nStarting\n############################\n")
 
 sess = tf.InteractiveSession()
 
-print("\n##################################\nBuilding ConvNet\n##################################")
+print("\n############################\nBuilding ConvNet\n############################")
 
 x = tf.placeholder(tf.float32, shape=[None, 784])
 y_ = tf.placeholder(tf.float32, shape=[None, 10])
@@ -195,23 +240,54 @@ model_accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 sess.run(tf.initialize_all_variables())
 
-print("\n##################################\nExecuting Experiments\n##################################")
+print("\n############################\nExecuting Experiments\n############################")
 
-df = pd.DataFrame()
+df_svm = pd.DataFrame()
+df_global = pd.DataFrame()
+
+#svm_accuracy["LK-SVM"] = SVM("linear")
+#svm_accuracy["GK-SVM"] = SVM("rbf")
+
+df_svm = df_svm.append(svm_accuracy, ignore_index=True)
+df_svm = df_svm[["LK-SVM", "GK-SVM"]]
 
 for index in range(NUMBER_OF_EXPERIMENTS):
-    experiment_accuracy["Linear Kernel SVM"] = SVM("linear")
-    experiment_accuracy["Gaussian Kernel SVM"] = SVM("rbf")
+    experiment_accuracy["1024HL-ELM"] = ELM(1024)
+    experiment_accuracy["4096HL-ELM"] = ELM(4096)
     experiment_accuracy["ConvNet"] = ConvNet(NUMBER_OF_EPOCHS)
     experiment_accuracy["ConvNetSVM"] = ConvNetSVM()
-    df = df.append(experiment_accuracy, ignore_index=True)
+    df_global = df_global.append(experiment_accuracy, ignore_index=True)
 
-df = df[["Linear Kernel SVM", "Gaussian Kernel SVM", "ConvNet", "ConvNetSVM"]]
+df_global = df_global[["1024HL-ELM", "4096HL-ELM", "ConvNet", "ConvNetSVM"]]
 
-print("\n##################################\nPrinting Results\n##################################\n")
+print("\n############################\nPrinting Results\n############################\n")
 
-print(df)
+print("\n", df_svm)
+print("\n", df_global,"\n")
+print(df_global.describe())
+print("\n", df_global.describe().transpose())
 
-print("\n##################################\nStoping\n##################################\n")
+plt.rc('font', family='serif', serif='Times')
+plt.rc('text', usetex=True)
+plt.rc('xtick', labelsize=8)
+plt.rc('ytick', labelsize=8)
+plt.rc('axes', labelsize=8)
+#plt.tight_layout()
+
+fig=plt.figure()
+fig.subplots_adjust(left=.15, bottom=.16, right=.99, top=.97)
+
+ax = df_global.plot.box()
+ax.set_xlabel("X label")
+ax.set_ylabel("Y label")
+ax.set_title("Title")
+
+width = 3.487
+height = width / 1.618
+fig.set_size_inches(width, height)
+
+plt.savefig("df_global.pdf")
+
+print("\n############################\nStoping\n############################\n")
 
 sess.close()
