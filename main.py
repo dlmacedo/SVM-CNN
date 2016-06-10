@@ -29,7 +29,7 @@ BATCHES_IN_EPOCH = 1000
 TRAIN_SIZE = BATCHES_IN_EPOCH * BATCH_SIZE
 TEST_SIZE = 10000
 NUMBER_OF_EPOCHS = 3
-NUMBER_OF_EXPERIMENTS = 5
+NUMBER_OF_EXPERIMENTS = 100
 
 mnist = input_data.read_data_sets('MNIST_data', one_hot=True)
 converter = np.array([0,1,2,3,4,5,6,7,8,9])
@@ -71,7 +71,7 @@ def max_pool_2x2(x):
     return tf.nn.max_pool(x, ksize=[1, 2, 2, 1], strides=[1, 2, 2, 1], padding='SAME')
 
 def SVM(krnl):
-    print("\n##################################\n", krnl, "Kernel SVM Train/Test\n##################################")
+    print("\n###############################\n", krnl, "Kernel SVM Train/Test\n###############################")
 
     for i in range(BATCHES_IN_EPOCH):
         train_batch = mnist.train.next_batch(BATCH_SIZE)
@@ -99,14 +99,14 @@ def SVM(krnl):
     print("\nTraining Time = ", training_time)
 
     accuracy = clf.score(test_features, test_labels)
-    test_time = time.time() - (training_time + initial_time)
-    print("\nTest Time = ", test_time)
+#    test_time = time.time() - (training_time + initial_time)
+#    print("\nTest Time = ", test_time)
 
     print("\n", krnl, "kernel SVM accuracy =", accuracy)
     return accuracy, training_time
 
 def ELM(nodes):
-    print("\n############################\n", nodes, "Hidden Layer Nodes ELM Train/Test\n############################")
+    print("\n#########################\n", nodes, "Hidden Layer Nodes ELM Train/Test\n#########################")
 
     for i in range(BATCHES_IN_EPOCH):
         train_batch = mnist.train.next_batch(BATCH_SIZE)
@@ -135,34 +135,34 @@ def ELM(nodes):
     print("\nTraining Time = ", training_time)
 
     accuracy = clf.score(test_features, test_labels)
-    test_time = time.time() - (training_time + initial_time)
-    print("\nTest Time = ", test_time)
+#    test_time = time.time() - (training_time + initial_time)
+#    print("\nTest Time = ", test_time)
 
     print("\n", nodes, "hidden layer nodes ELM accuracy =", accuracy)
     return accuracy, training_time
 
 def ConvNet(number_of_training_epochs):
-    print("\n############################\nConvNet Train/Test\n############################\n")
+    print("\n#########################\nConvNet Train/Test\n#########################\n")
     initial_time = time.time()
 
     for i in range(number_of_training_epochs * BATCHES_IN_EPOCH):
         batch = mnist.train.next_batch(BATCH_SIZE)
         if i%BATCHES_IN_EPOCH == 0:
             train_accuracy = model_accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
-            print("epoch ", int(i/BATCHES_IN_EPOCH), "training accuracy ", train_accuracy)
+#            print("epoch ", int(i/BATCHES_IN_EPOCH), "training accuracy ", train_accuracy)
         train_step.run(feed_dict={x: batch[0], y_: batch[1], keep_prob: 0.5})
     training_time = time.time()-initial_time
     print("\nTraining Time = ", training_time)
 
     accuracy = model_accuracy.eval(feed_dict={x: mnist.test.images, y_: mnist.test.labels, keep_prob: 1.0})
-    test_time = time.time() - (training_time + initial_time)
-    print("\nTest Time = ", test_time)
+#    test_time = time.time() - (training_time + initial_time)
+#    print("\nTest Time = ", test_time)
 
     print("\nConvNet accuracy =", accuracy)
     return accuracy, training_time
 
 def ConvNetSVM():
-    print("\n############################\nConvNetSVM Train/Test\n############################")
+    print("\n#########################\nConvNetSVM Train/Test\n#########################")
     initial_time = time.time()
 
     for i in range(BATCHES_IN_EPOCH):
@@ -190,17 +190,17 @@ def ConvNetSVM():
     print("\nTraining Time = ", training_time)
 
     accuracy = clf.score(test_features_cnn, test_labels_cnn)
-    test_time = time.time() - (training_time + initial_time)
-    print("\nTest Time = ", test_time)
+#    test_time = time.time() - (training_time + initial_time)
+#    print("\nTest Time = ", test_time)
 
     print("\nConvNetSVM accuracy =", accuracy)
     return accuracy, training_time
 
-print("\n############################\nStarting\n############################\n")
+print("\n#########################\nStarting\n#########################\n")
 
 sess = tf.InteractiveSession()
 
-print("\n############################\nBuilding ConvNet\n############################")
+print("\n#########################\nBuilding ConvNet\n#########################")
 
 x = tf.placeholder(tf.float32, shape=[None, 784])
 y_ = tf.placeholder(tf.float32, shape=[None, 10])
@@ -239,18 +239,20 @@ model_accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
 sess.run(tf.initialize_all_variables())
 
-print("\n############################\nExecuting Experiments\n############################")
+print("\n#########################\nExecuting Experiments\n#########################")
 
 dataframe_svm = pd.DataFrame()
 dataframe_results = pd.DataFrame()
 
-dataframe_svm["LK-SVM-ACCU"], svm_results["LK-SVM-TIME"] = SVM("linear")
-dataframe_svm["GK-SVM-ACCU"], svm_results["GK-SVM-TIME"] = SVM("rbf")
+svm_results["LK-SVM-ACCU"], svm_results["LK-SVM-TIME"] = SVM("linear")
+svm_results["GK-SVM-ACCU"], svm_results["GK-SVM-TIME"] = SVM("rbf")
+
 dataframe_svm = dataframe_svm.append(svm_results, ignore_index=True)
 
 dataframe_svm = dataframe_svm[["LK-SVM-ACCU", "GK-SVM-ACCU", "LK-SVM-TIME", "GK-SVM-TIME"]]
 
 for index in range(NUMBER_OF_EXPERIMENTS):
+    print("\n#########################\nExperiment", index, "of", NUMBER_OF_EXPERIMENTS, "\n#########################")
     experiment_results["1024HL-ELM-ACCU"], experiment_results["1024HL-ELM-TIME"] = ELM(1024)
     experiment_results["4096HL-ELM-ACCU"], experiment_results["4096HL-ELM-TIME"] = ELM(4096)
     experiment_results["ConvNet-ACCU"], experiment_results["ConvNet-TIME"] = ConvNet(NUMBER_OF_EPOCHS)
@@ -260,13 +262,13 @@ for index in range(NUMBER_OF_EXPERIMENTS):
 dataframe_results = dataframe_results[["1024HL-ELM-ACCU", "4096HL-ELM-ACCU", "ConvNet-ACCU", "ConvNetSVM-ACCU",
                        "1024HL-ELM-TIME", "4096HL-ELM-TIME", "ConvNet-TIME", "ConvNetSVM-TIME",]]
 
-print("\n############################\nPrinting Results\n############################\n")
+print("\n#########################\nPrinting Results\n#########################\n")
 
 print("\n", dataframe_svm)
 print("\n", dataframe_results, "\n")
 print(dataframe_results.describe())
 
-print("\n############################\nStoping\n############################\n")
+print("\n#########################\nStoping\n#########################\n")
 
 sess.close()
 
