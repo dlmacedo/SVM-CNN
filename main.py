@@ -142,14 +142,14 @@ def ELM(nodes):
     return accuracy, training_time
 
 def ConvNet(number_of_training_epochs):
-    print("\n#########################\nConvNet Train/Test\n#########################\n")
+    print("\n#########################\nConvNet Train/Test\n#########################")
     initial_time = time.time()
 
     for i in range(number_of_training_epochs * BATCHES_IN_EPOCH):
         batch = mnist.train.next_batch(BATCH_SIZE)
         if i%BATCHES_IN_EPOCH == 0:
             train_accuracy = model_accuracy.eval(feed_dict={x: batch[0], y_: batch[1], keep_prob: 1.0})
-#            print("epoch ", int(i/BATCHES_IN_EPOCH), "training accuracy ", train_accuracy)
+#            print("\nEpoch ", int(i/BATCHES_IN_EPOCH), "Training Accuracy ", train_accuracy)
         train_step.run(feed_dict={x: batch[0], y_: batch[1], keep_prob: 0.5})
     training_time = time.time()-initial_time
     print("\nTraining Time = ", training_time)
@@ -237,7 +237,7 @@ train_step = tf.train.AdamOptimizer(1e-4).minimize(cross_entropy)
 correct_prediction = tf.equal(tf.argmax(y_conv,1), tf.argmax(y_,1))
 model_accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))
 
-sess.run(tf.initialize_all_variables())
+#sess.run(tf.initialize_all_variables())
 
 print("\n#########################\nExecuting Experiments\n#########################")
 
@@ -248,13 +248,13 @@ svm_results["LK-SVM-ACCU"], svm_results["LK-SVM-TIME"] = SVM("linear")
 svm_results["GK-SVM-ACCU"], svm_results["GK-SVM-TIME"] = SVM("rbf")
 
 dataframe_svm = dataframe_svm.append(svm_results, ignore_index=True)
-
 dataframe_svm = dataframe_svm[["LK-SVM-ACCU", "GK-SVM-ACCU", "LK-SVM-TIME", "GK-SVM-TIME"]]
 
 for index in range(NUMBER_OF_EXPERIMENTS):
-    print("\n#########################\nExperiment", index, "of", NUMBER_OF_EXPERIMENTS, "\n#########################")
+    print("\n#########################\nExperiment", index+1, "of", NUMBER_OF_EXPERIMENTS, "\n#########################")
     experiment_results["1024HL-ELM-ACCU"], experiment_results["1024HL-ELM-TIME"] = ELM(1024)
     experiment_results["4096HL-ELM-ACCU"], experiment_results["4096HL-ELM-TIME"] = ELM(4096)
+    sess.run(tf.initialize_all_variables())
     experiment_results["ConvNet-ACCU"], experiment_results["ConvNet-TIME"] = ConvNet(NUMBER_OF_EPOCHS)
     experiment_results["ConvNetSVM-ACCU"], experiment_results["ConvNetSVM-TIME"] = ConvNetSVM()
     dataframe_results = dataframe_results.append(experiment_results, ignore_index=True)
