@@ -1,0 +1,3817 @@
+(tensorflow)dlm@pc-aero-01:~/projects/CIn/ConvNetSVM$ 
+(tensorflow)dlm@pc-aero-01:~/projects/CIn/ConvNetSVM$ 
+(tensorflow)dlm@pc-aero-01:~/projects/CIn/ConvNetSVM$ python main.py
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcublas.so locally
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcudnn.so locally
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcufft.so locally
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcuda.so.1 locally
+I tensorflow/stream_executor/dso_loader.cc:105] successfully opened CUDA library libcurand.so locally
+Extracting MNIST_data/train-images-idx3-ubyte.gz
+Extracting MNIST_data/train-labels-idx1-ubyte.gz
+Extracting MNIST_data/t10k-images-idx3-ubyte.gz
+Extracting MNIST_data/t10k-labels-idx1-ubyte.gz
+
+#########################
+Starting
+#########################
+
+I tensorflow/stream_executor/cuda/cuda_gpu_executor.cc:900] successful NUMA node read from SysFS had negative value (-1), but there must be at least one NUMA node, so returning NUMA node zero
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:102] Found device 0 with properties: 
+name: GeForce GTX 980 Ti
+major: 5 minor: 2 memoryClockRate (GHz) 1.19
+pciBusID 0000:01:00.0
+Total memory: 6.00GiB
+Free memory: 5.64GiB
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:126] DMA: 0 
+I tensorflow/core/common_runtime/gpu/gpu_init.cc:136] 0:   Y 
+I tensorflow/core/common_runtime/gpu/gpu_device.cc:755] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 980 Ti, pci bus id: 0000:01:00.0)
+
+#########################
+Building ConvNet
+#########################
+
+#########################
+Executing Experiments
+#########################
+
+###############################
+ linear Kernel SVM Train/Test
+###############################
+
+Training Time =  216.29847526550293
+
+ linear kernel SVM accuracy = 0.9393
+
+###############################
+ rbf Kernel SVM Train/Test
+###############################
+
+Training Time =  362.7654130458832
+
+ rbf kernel SVM accuracy = 0.9439
+
+#########################
+Experiment 1 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.181931734085083
+
+ 1024 hidden layer nodes ELM accuracy = 0.9257
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  157.12668776512146
+
+ 4096 hidden layer nodes ELM accuracy = 0.9588
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.826030254364014
+
+ConvNet accuracy = 0.9752
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  26.25485396385193
+
+ConvNetSVM accuracy = 0.9855
+
+#########################
+Experiment 2 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.092565298080444
+
+ 1024 hidden layer nodes ELM accuracy = 0.9253
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.54942226409912
+
+ 4096 hidden layer nodes ELM accuracy = 0.9599
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.654366254806519
+
+ConvNet accuracy = 0.9759
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  29.164332151412964
+
+ConvNetSVM accuracy = 0.9866
+
+#########################
+Experiment 3 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.113903760910034
+
+ 1024 hidden layer nodes ELM accuracy = 0.928
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.80802011489868
+
+ 4096 hidden layer nodes ELM accuracy = 0.9587
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.674929857254028
+
+ConvNet accuracy = 0.9758
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  28.561516284942627
+
+ConvNetSVM accuracy = 0.9859
+
+#########################
+Experiment 4 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.143174409866333
+
+ 1024 hidden layer nodes ELM accuracy = 0.9282
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.25836086273193
+
+ 4096 hidden layer nodes ELM accuracy = 0.96
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.64971375465393
+
+ConvNet accuracy = 0.9725
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.887412309646606
+
+ConvNetSVM accuracy = 0.9851
+
+#########################
+Experiment 5 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.204087018966675
+
+ 1024 hidden layer nodes ELM accuracy = 0.9284
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.6772336959839
+
+ 4096 hidden layer nodes ELM accuracy = 0.9585
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.647470712661743
+
+ConvNet accuracy = 0.9729
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.092286348342896
+
+ConvNetSVM accuracy = 0.9849
+
+#########################
+Experiment 6 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.139779806137085
+
+ 1024 hidden layer nodes ELM accuracy = 0.9279
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.2500250339508
+
+ 4096 hidden layer nodes ELM accuracy = 0.9578
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.643808364868164
+
+ConvNet accuracy = 0.9744
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.020856857299805
+
+ConvNetSVM accuracy = 0.9862
+
+#########################
+Experiment 7 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.18720817565918
+
+ 1024 hidden layer nodes ELM accuracy = 0.9317
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.90548539161682
+
+ 4096 hidden layer nodes ELM accuracy = 0.9602
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.651900053024292
+
+ConvNet accuracy = 0.9703
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.35407018661499
+
+ConvNetSVM accuracy = 0.9844
+
+#########################
+Experiment 8 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.08198618888855
+
+ 1024 hidden layer nodes ELM accuracy = 0.9277
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.5651819705963
+
+ 4096 hidden layer nodes ELM accuracy = 0.9612
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.668392419815063
+
+ConvNet accuracy = 0.9749
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.625150680541992
+
+ConvNetSVM accuracy = 0.9862
+
+#########################
+Experiment 9 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.144455194473267
+
+ 1024 hidden layer nodes ELM accuracy = 0.9259
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.23484110832214
+
+ 4096 hidden layer nodes ELM accuracy = 0.9579
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.661429166793823
+
+ConvNet accuracy = 0.9726
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.819886445999146
+
+ConvNetSVM accuracy = 0.9848
+
+#########################
+Experiment 10 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.049252986907959
+
+ 1024 hidden layer nodes ELM accuracy = 0.9253
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.06616258621216
+
+ 4096 hidden layer nodes ELM accuracy = 0.9602
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.677376985549927
+
+ConvNet accuracy = 0.9716
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  32.3177216053009
+
+ConvNetSVM accuracy = 0.9832
+
+#########################
+Experiment 11 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.065436601638794
+
+ 1024 hidden layer nodes ELM accuracy = 0.9262
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.42385935783386
+
+ 4096 hidden layer nodes ELM accuracy = 0.9603
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.655478239059448
+
+ConvNet accuracy = 0.9698
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.734460830688477
+
+ConvNetSVM accuracy = 0.9835
+
+#########################
+Experiment 12 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.072576522827148
+
+ 1024 hidden layer nodes ELM accuracy = 0.9296
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.20911478996277
+
+ 4096 hidden layer nodes ELM accuracy = 0.9582
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.667248487472534
+
+ConvNet accuracy = 0.9736
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  34.617249488830566
+
+ConvNetSVM accuracy = 0.9845
+
+#########################
+Experiment 13 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.052584409713745
+
+ 1024 hidden layer nodes ELM accuracy = 0.9244
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.45790767669678
+
+ 4096 hidden layer nodes ELM accuracy = 0.9613
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.645406723022461
+
+ConvNet accuracy = 0.9665
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  36.861873149871826
+
+ConvNetSVM accuracy = 0.9843
+
+#########################
+Experiment 14 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.04999303817749
+
+ 1024 hidden layer nodes ELM accuracy = 0.93
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.75799465179443
+
+ 4096 hidden layer nodes ELM accuracy = 0.962
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.648659944534302
+
+ConvNet accuracy = 0.9733
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.371867895126343
+
+ConvNetSVM accuracy = 0.986
+
+#########################
+Experiment 15 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.106163501739502
+
+ 1024 hidden layer nodes ELM accuracy = 0.9275
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.8175024986267
+
+ 4096 hidden layer nodes ELM accuracy = 0.9588
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.672743797302246
+
+ConvNet accuracy = 0.9754
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  29.00514531135559
+
+ConvNetSVM accuracy = 0.9864
+
+#########################
+Experiment 16 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.12511920928955
+
+ 1024 hidden layer nodes ELM accuracy = 0.9263
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.80739879608154
+
+ 4096 hidden layer nodes ELM accuracy = 0.9601
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.662627458572388
+
+ConvNet accuracy = 0.9727
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.82416605949402
+
+ConvNetSVM accuracy = 0.9871
+
+#########################
+Experiment 17 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.087805271148682
+
+ 1024 hidden layer nodes ELM accuracy = 0.927
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.67873120307922
+
+ 4096 hidden layer nodes ELM accuracy = 0.9602
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.648543357849121
+
+ConvNet accuracy = 0.9732
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.269431352615356
+
+ConvNetSVM accuracy = 0.9858
+
+#########################
+Experiment 18 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.030462741851807
+
+ 1024 hidden layer nodes ELM accuracy = 0.9266
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.40881419181824
+
+ 4096 hidden layer nodes ELM accuracy = 0.9594
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.66450572013855
+
+ConvNet accuracy = 0.9732
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.158719778060913
+
+ConvNetSVM accuracy = 0.984
+
+#########################
+Experiment 19 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.12720799446106
+
+ 1024 hidden layer nodes ELM accuracy = 0.9252
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.69506359100342
+
+ 4096 hidden layer nodes ELM accuracy = 0.9607
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.656847476959229
+
+ConvNet accuracy = 0.9715
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.292713165283203
+
+ConvNetSVM accuracy = 0.9861
+
+#########################
+Experiment 20 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.139939069747925
+
+ 1024 hidden layer nodes ELM accuracy = 0.9264
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.40450716018677
+
+ 4096 hidden layer nodes ELM accuracy = 0.959
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.653546810150146
+
+ConvNet accuracy = 0.9732
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  32.59125471115112
+
+ConvNetSVM accuracy = 0.9852
+
+#########################
+Experiment 21 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.174063205718994
+
+ 1024 hidden layer nodes ELM accuracy = 0.9261
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.05520582199097
+
+ 4096 hidden layer nodes ELM accuracy = 0.9603
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.663295030593872
+
+ConvNet accuracy = 0.9719
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  28.478055953979492
+
+ConvNetSVM accuracy = 0.9856
+
+#########################
+Experiment 22 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.044606685638428
+
+ 1024 hidden layer nodes ELM accuracy = 0.9257
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  160.10092520713806
+
+ 4096 hidden layer nodes ELM accuracy = 0.9585
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.654723882675171
+
+ConvNet accuracy = 0.9735
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  29.468477964401245
+
+ConvNetSVM accuracy = 0.9845
+
+#########################
+Experiment 23 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  12.157134532928467
+
+ 1024 hidden layer nodes ELM accuracy = 0.9266
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.36352467536926
+
+ 4096 hidden layer nodes ELM accuracy = 0.96
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.657708883285522
+
+ConvNet accuracy = 0.9721
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  32.03702521324158
+
+ConvNetSVM accuracy = 0.9844
+
+#########################
+Experiment 24 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.162118911743164
+
+ 1024 hidden layer nodes ELM accuracy = 0.9274
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.31357502937317
+
+ 4096 hidden layer nodes ELM accuracy = 0.9591
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.642558336257935
+
+ConvNet accuracy = 0.9712
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  33.063265800476074
+
+ConvNetSVM accuracy = 0.985
+
+#########################
+Experiment 25 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.052687883377075
+
+ 1024 hidden layer nodes ELM accuracy = 0.9263
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.6005780696869
+
+ 4096 hidden layer nodes ELM accuracy = 0.9593
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.66825819015503
+
+ConvNet accuracy = 0.9725
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  29.084058046340942
+
+ConvNetSVM accuracy = 0.9862
+
+#########################
+Experiment 26 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.071350812911987
+
+ 1024 hidden layer nodes ELM accuracy = 0.926
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.09559512138367
+
+ 4096 hidden layer nodes ELM accuracy = 0.9599
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.651716470718384
+
+ConvNet accuracy = 0.9731
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  28.727884769439697
+
+ConvNetSVM accuracy = 0.9859
+
+#########################
+Experiment 27 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.158029556274414
+
+ 1024 hidden layer nodes ELM accuracy = 0.9267
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.8134150505066
+
+ 4096 hidden layer nodes ELM accuracy = 0.9586
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.653808355331421
+
+ConvNet accuracy = 0.9735
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.65425133705139
+
+ConvNetSVM accuracy = 0.9855
+
+#########################
+Experiment 28 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.12630844116211
+
+ 1024 hidden layer nodes ELM accuracy = 0.9287
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.91764283180237
+
+ 4096 hidden layer nodes ELM accuracy = 0.9597
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.66409969329834
+
+ConvNet accuracy = 0.974
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.910468816757202
+
+ConvNetSVM accuracy = 0.9864
+
+#########################
+Experiment 29 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.156234741210938
+
+ 1024 hidden layer nodes ELM accuracy = 0.9288
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.02634835243225
+
+ 4096 hidden layer nodes ELM accuracy = 0.9577
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.65603756904602
+
+ConvNet accuracy = 0.9751
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  27.171414852142334
+
+ConvNetSVM accuracy = 0.9875
+
+#########################
+Experiment 30 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.086921453475952
+
+ 1024 hidden layer nodes ELM accuracy = 0.9299
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.10131978988647
+
+ 4096 hidden layer nodes ELM accuracy = 0.9599
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.667626857757568
+
+ConvNet accuracy = 0.9722
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  32.84803080558777
+
+ConvNetSVM accuracy = 0.985
+
+#########################
+Experiment 31 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.09728455543518
+
+ 1024 hidden layer nodes ELM accuracy = 0.9265
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.15612316131592
+
+ 4096 hidden layer nodes ELM accuracy = 0.9579
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.65987753868103
+
+ConvNet accuracy = 0.9735
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  28.36191987991333
+
+ConvNetSVM accuracy = 0.9863
+
+#########################
+Experiment 32 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.086798906326294
+
+ 1024 hidden layer nodes ELM accuracy = 0.9285
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.91780805587769
+
+ 4096 hidden layer nodes ELM accuracy = 0.9596
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.660598039627075
+
+ConvNet accuracy = 0.9702
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  29.79294466972351
+
+ConvNetSVM accuracy = 0.9867
+
+#########################
+Experiment 33 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.12320876121521
+
+ 1024 hidden layer nodes ELM accuracy = 0.9278
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.40616917610168
+
+ 4096 hidden layer nodes ELM accuracy = 0.9615
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.651064157485962
+
+ConvNet accuracy = 0.9727
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  32.65350008010864
+
+ConvNetSVM accuracy = 0.9856
+
+#########################
+Experiment 34 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.119617700576782
+
+ 1024 hidden layer nodes ELM accuracy = 0.9245
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.33328700065613
+
+ 4096 hidden layer nodes ELM accuracy = 0.9586
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.650703430175781
+
+ConvNet accuracy = 0.9723
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  34.07118463516235
+
+ConvNetSVM accuracy = 0.9849
+
+#########################
+Experiment 35 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.121361017227173
+
+ 1024 hidden layer nodes ELM accuracy = 0.9279
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  152.92454361915588
+
+ 4096 hidden layer nodes ELM accuracy = 0.9591
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.670530080795288
+
+ConvNet accuracy = 0.9734
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.38875913619995
+
+ConvNetSVM accuracy = 0.9854
+
+#########################
+Experiment 36 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.143170833587646
+
+ 1024 hidden layer nodes ELM accuracy = 0.9236
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  156.45186758041382
+
+ 4096 hidden layer nodes ELM accuracy = 0.9597
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.653195142745972
+
+ConvNet accuracy = 0.9727
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.739956378936768
+
+ConvNetSVM accuracy = 0.9857
+
+#########################
+Experiment 37 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.140362739562988
+
+ 1024 hidden layer nodes ELM accuracy = 0.9293
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.36210083961487
+
+ 4096 hidden layer nodes ELM accuracy = 0.9587
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.653210401535034
+
+ConvNet accuracy = 0.9726
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  33.672006368637085
+
+ConvNetSVM accuracy = 0.9857
+
+#########################
+Experiment 38 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.1840341091156
+
+ 1024 hidden layer nodes ELM accuracy = 0.9267
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.50924968719482
+
+ 4096 hidden layer nodes ELM accuracy = 0.9622
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.650641918182373
+
+ConvNet accuracy = 0.9741
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  32.89946103096008
+
+ConvNetSVM accuracy = 0.9866
+
+#########################
+Experiment 39 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.087482452392578
+
+ 1024 hidden layer nodes ELM accuracy = 0.9259
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.81919932365417
+
+ 4096 hidden layer nodes ELM accuracy = 0.96
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.651914358139038
+
+ConvNet accuracy = 0.9728
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.6828875541687
+
+ConvNetSVM accuracy = 0.9846
+
+#########################
+Experiment 40 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.146629333496094
+
+ 1024 hidden layer nodes ELM accuracy = 0.9264
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.0130980014801
+
+ 4096 hidden layer nodes ELM accuracy = 0.957
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.667555809020996
+
+ConvNet accuracy = 0.9755
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  28.546080827713013
+
+ConvNetSVM accuracy = 0.9861
+
+#########################
+Experiment 41 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.05287790298462
+
+ 1024 hidden layer nodes ELM accuracy = 0.9262
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.5143268108368
+
+ 4096 hidden layer nodes ELM accuracy = 0.9603
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.647865056991577
+
+ConvNet accuracy = 0.976
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.374134302139282
+
+ConvNetSVM accuracy = 0.9879
+
+#########################
+Experiment 42 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.050486087799072
+
+ 1024 hidden layer nodes ELM accuracy = 0.9257
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  152.59063267707825
+
+ 4096 hidden layer nodes ELM accuracy = 0.9614
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.651811599731445
+
+ConvNet accuracy = 0.9739
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  29.835810661315918
+
+ConvNetSVM accuracy = 0.9856
+
+#########################
+Experiment 43 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.114104747772217
+
+ 1024 hidden layer nodes ELM accuracy = 0.9284
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.94687509536743
+
+ 4096 hidden layer nodes ELM accuracy = 0.9596
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.662025213241577
+
+ConvNet accuracy = 0.9671
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  32.23568320274353
+
+ConvNetSVM accuracy = 0.9836
+
+#########################
+Experiment 44 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.053818941116333
+
+ 1024 hidden layer nodes ELM accuracy = 0.927
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.23541808128357
+
+ 4096 hidden layer nodes ELM accuracy = 0.9583
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.65552020072937
+
+ConvNet accuracy = 0.9753
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  32.878040075302124
+
+ConvNetSVM accuracy = 0.9861
+
+#########################
+Experiment 45 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.031920671463013
+
+ 1024 hidden layer nodes ELM accuracy = 0.927
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.28287363052368
+
+ 4096 hidden layer nodes ELM accuracy = 0.9576
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.676585674285889
+
+ConvNet accuracy = 0.9711
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  29.995848178863525
+
+ConvNetSVM accuracy = 0.9838
+
+#########################
+Experiment 46 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.052559614181519
+
+ 1024 hidden layer nodes ELM accuracy = 0.9256
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.1336317062378
+
+ 4096 hidden layer nodes ELM accuracy = 0.9579
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.654693126678467
+
+ConvNet accuracy = 0.9687
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  32.668564558029175
+
+ConvNetSVM accuracy = 0.984
+
+#########################
+Experiment 47 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.079271793365479
+
+ 1024 hidden layer nodes ELM accuracy = 0.9295
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.99883723258972
+
+ 4096 hidden layer nodes ELM accuracy = 0.9605
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.647243976593018
+
+ConvNet accuracy = 0.9707
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  33.70119524002075
+
+ConvNetSVM accuracy = 0.985
+
+#########################
+Experiment 48 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.125430583953857
+
+ 1024 hidden layer nodes ELM accuracy = 0.9268
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.66156649589539
+
+ 4096 hidden layer nodes ELM accuracy = 0.9587
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.648552656173706
+
+ConvNet accuracy = 0.9743
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.040192127227783
+
+ConvNetSVM accuracy = 0.9853
+
+#########################
+Experiment 49 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.091713428497314
+
+ 1024 hidden layer nodes ELM accuracy = 0.9294
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.17711973190308
+
+ 4096 hidden layer nodes ELM accuracy = 0.9596
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.645528793334961
+
+ConvNet accuracy = 0.9738
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  32.540050983428955
+
+ConvNetSVM accuracy = 0.9852
+
+#########################
+Experiment 50 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.16011118888855
+
+ 1024 hidden layer nodes ELM accuracy = 0.928
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.9888060092926
+
+ 4096 hidden layer nodes ELM accuracy = 0.9577
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.661293745040894
+
+ConvNet accuracy = 0.9748
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  26.384287357330322
+
+ConvNetSVM accuracy = 0.9868
+
+#########################
+Experiment 51 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.129926204681396
+
+ 1024 hidden layer nodes ELM accuracy = 0.9298
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.7596459388733
+
+ 4096 hidden layer nodes ELM accuracy = 0.9584
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.66639518737793
+
+ConvNet accuracy = 0.9704
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.53564214706421
+
+ConvNetSVM accuracy = 0.984
+
+#########################
+Experiment 52 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.111700773239136
+
+ 1024 hidden layer nodes ELM accuracy = 0.9271
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.08835911750793
+
+ 4096 hidden layer nodes ELM accuracy = 0.9595
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.662117004394531
+
+ConvNet accuracy = 0.9732
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  29.753031969070435
+
+ConvNetSVM accuracy = 0.9833
+
+#########################
+Experiment 53 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.131174087524414
+
+ 1024 hidden layer nodes ELM accuracy = 0.9253
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.97615909576416
+
+ 4096 hidden layer nodes ELM accuracy = 0.9575
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.658637046813965
+
+ConvNet accuracy = 0.9709
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.7269766330719
+
+ConvNetSVM accuracy = 0.9844
+
+#########################
+Experiment 54 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.122823476791382
+
+ 1024 hidden layer nodes ELM accuracy = 0.9259
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.49297332763672
+
+ 4096 hidden layer nodes ELM accuracy = 0.9619
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.663307905197144
+
+ConvNet accuracy = 0.973
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.567477226257324
+
+ConvNetSVM accuracy = 0.9846
+
+#########################
+Experiment 55 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.068898439407349
+
+ 1024 hidden layer nodes ELM accuracy = 0.9302
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.83464813232422
+
+ 4096 hidden layer nodes ELM accuracy = 0.96
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.65914249420166
+
+ConvNet accuracy = 0.9718
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.580353260040283
+
+ConvNetSVM accuracy = 0.9854
+
+#########################
+Experiment 56 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.137336730957031
+
+ 1024 hidden layer nodes ELM accuracy = 0.9289
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.01658415794373
+
+ 4096 hidden layer nodes ELM accuracy = 0.9588
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.655153036117554
+
+ConvNet accuracy = 0.9735
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  27.136667728424072
+
+ConvNetSVM accuracy = 0.9857
+
+#########################
+Experiment 57 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.090903759002686
+
+ 1024 hidden layer nodes ELM accuracy = 0.9301
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.38764691352844
+
+ 4096 hidden layer nodes ELM accuracy = 0.9607
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.647857427597046
+
+ConvNet accuracy = 0.9709
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  32.11422371864319
+
+ConvNetSVM accuracy = 0.9853
+
+#########################
+Experiment 58 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.182263612747192
+
+ 1024 hidden layer nodes ELM accuracy = 0.9229
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.61675429344177
+
+ 4096 hidden layer nodes ELM accuracy = 0.9573
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.648178339004517
+
+ConvNet accuracy = 0.9714
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.80085277557373
+
+ConvNetSVM accuracy = 0.9853
+
+#########################
+Experiment 59 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.101758480072021
+
+ 1024 hidden layer nodes ELM accuracy = 0.927
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.95997047424316
+
+ 4096 hidden layer nodes ELM accuracy = 0.9615
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.660446166992188
+
+ConvNet accuracy = 0.9718
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  27.218964338302612
+
+ConvNetSVM accuracy = 0.9859
+
+#########################
+Experiment 60 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.080028057098389
+
+ 1024 hidden layer nodes ELM accuracy = 0.9302
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  152.8756844997406
+
+ 4096 hidden layer nodes ELM accuracy = 0.9589
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.66006350517273
+
+ConvNet accuracy = 0.971
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  29.237892389297485
+
+ConvNetSVM accuracy = 0.9837
+
+#########################
+Experiment 61 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.075414419174194
+
+ 1024 hidden layer nodes ELM accuracy = 0.9266
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.73681735992432
+
+ 4096 hidden layer nodes ELM accuracy = 0.9603
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.779561758041382
+
+ConvNet accuracy = 0.9751
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  29.87374496459961
+
+ConvNetSVM accuracy = 0.9861
+
+#########################
+Experiment 62 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.05452036857605
+
+ 1024 hidden layer nodes ELM accuracy = 0.9275
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.22748446464539
+
+ 4096 hidden layer nodes ELM accuracy = 0.9614
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.651166200637817
+
+ConvNet accuracy = 0.9685
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  32.80159664154053
+
+ConvNetSVM accuracy = 0.9834
+
+#########################
+Experiment 63 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.144572734832764
+
+ 1024 hidden layer nodes ELM accuracy = 0.9262
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.61124539375305
+
+ 4096 hidden layer nodes ELM accuracy = 0.9609
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.658282995223999
+
+ConvNet accuracy = 0.9735
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  28.7492995262146
+
+ConvNetSVM accuracy = 0.9841
+
+#########################
+Experiment 64 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.066774845123291
+
+ 1024 hidden layer nodes ELM accuracy = 0.9251
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.076486825943
+
+ 4096 hidden layer nodes ELM accuracy = 0.9588
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.65083622932434
+
+ConvNet accuracy = 0.9702
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.303007125854492
+
+ConvNetSVM accuracy = 0.9844
+
+#########################
+Experiment 65 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.113661766052246
+
+ 1024 hidden layer nodes ELM accuracy = 0.9247
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.9585063457489
+
+ 4096 hidden layer nodes ELM accuracy = 0.9599
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.654626846313477
+
+ConvNet accuracy = 0.9738
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.43915605545044
+
+ConvNetSVM accuracy = 0.9843
+
+#########################
+Experiment 66 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.09190583229065
+
+ 1024 hidden layer nodes ELM accuracy = 0.9284
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.19759607315063
+
+ 4096 hidden layer nodes ELM accuracy = 0.96
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.653180599212646
+
+ConvNet accuracy = 0.9729
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.968613862991333
+
+ConvNetSVM accuracy = 0.9857
+
+#########################
+Experiment 67 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.088663578033447
+
+ 1024 hidden layer nodes ELM accuracy = 0.9237
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.52489018440247
+
+ 4096 hidden layer nodes ELM accuracy = 0.9594
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.657329082489014
+
+ConvNet accuracy = 0.9699
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  28.96315312385559
+
+ConvNetSVM accuracy = 0.9851
+
+#########################
+Experiment 68 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.051713228225708
+
+ 1024 hidden layer nodes ELM accuracy = 0.9262
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  152.85151195526123
+
+ 4096 hidden layer nodes ELM accuracy = 0.9582
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.652924299240112
+
+ConvNet accuracy = 0.9725
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.271847248077393
+
+ConvNetSVM accuracy = 0.9833
+
+#########################
+Experiment 69 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.21295976638794
+
+ 1024 hidden layer nodes ELM accuracy = 0.9293
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.94655442237854
+
+ 4096 hidden layer nodes ELM accuracy = 0.9583
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.660475969314575
+
+ConvNet accuracy = 0.9726
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  34.51892685890198
+
+ConvNetSVM accuracy = 0.9844
+
+#########################
+Experiment 70 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.092988014221191
+
+ 1024 hidden layer nodes ELM accuracy = 0.9288
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.2917001247406
+
+ 4096 hidden layer nodes ELM accuracy = 0.9593
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.64566946029663
+
+ConvNet accuracy = 0.9744
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  28.88184428215027
+
+ConvNetSVM accuracy = 0.9846
+
+#########################
+Experiment 71 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.08184289932251
+
+ 1024 hidden layer nodes ELM accuracy = 0.9265
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.9823033809662
+
+ 4096 hidden layer nodes ELM accuracy = 0.9611
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.65809941291809
+
+ConvNet accuracy = 0.9738
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.56038212776184
+
+ConvNetSVM accuracy = 0.9856
+
+#########################
+Experiment 72 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.1291823387146
+
+ 1024 hidden layer nodes ELM accuracy = 0.9272
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.0798397064209
+
+ 4096 hidden layer nodes ELM accuracy = 0.96
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.647272109985352
+
+ConvNet accuracy = 0.9751
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  29.293999433517456
+
+ConvNetSVM accuracy = 0.9864
+
+#########################
+Experiment 73 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.124841451644897
+
+ 1024 hidden layer nodes ELM accuracy = 0.9261
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.39545798301697
+
+ 4096 hidden layer nodes ELM accuracy = 0.9608
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.66219425201416
+
+ConvNet accuracy = 0.975
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  27.17232918739319
+
+ConvNetSVM accuracy = 0.9863
+
+#########################
+Experiment 74 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.053836345672607
+
+ 1024 hidden layer nodes ELM accuracy = 0.927
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.15665745735168
+
+ 4096 hidden layer nodes ELM accuracy = 0.9607
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.661343097686768
+
+ConvNet accuracy = 0.9745
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.02942180633545
+
+ConvNetSVM accuracy = 0.9873
+
+#########################
+Experiment 75 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.056742191314697
+
+ 1024 hidden layer nodes ELM accuracy = 0.9285
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.8386127948761
+
+ 4096 hidden layer nodes ELM accuracy = 0.9581
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.651608228683472
+
+ConvNet accuracy = 0.9715
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.13368582725525
+
+ConvNetSVM accuracy = 0.9855
+
+#########################
+Experiment 76 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.124818563461304
+
+ 1024 hidden layer nodes ELM accuracy = 0.9287
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.04076647758484
+
+ 4096 hidden layer nodes ELM accuracy = 0.9587
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.661795616149902
+
+ConvNet accuracy = 0.9713
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  29.83031940460205
+
+ConvNetSVM accuracy = 0.9845
+
+#########################
+Experiment 77 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.033571243286133
+
+ 1024 hidden layer nodes ELM accuracy = 0.9267
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  152.90365505218506
+
+ 4096 hidden layer nodes ELM accuracy = 0.9601
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.651204109191895
+
+ConvNet accuracy = 0.9752
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  28.087435483932495
+
+ConvNetSVM accuracy = 0.9855
+
+#########################
+Experiment 78 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.022159576416016
+
+ 1024 hidden layer nodes ELM accuracy = 0.9267
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.2314453125
+
+ 4096 hidden layer nodes ELM accuracy = 0.9595
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.648375034332275
+
+ConvNet accuracy = 0.9731
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  34.78252363204956
+
+ConvNetSVM accuracy = 0.9861
+
+#########################
+Experiment 79 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.133423089981079
+
+ 1024 hidden layer nodes ELM accuracy = 0.9234
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.15661144256592
+
+ 4096 hidden layer nodes ELM accuracy = 0.9604
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.658408164978027
+
+ConvNet accuracy = 0.9709
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.752914905548096
+
+ConvNetSVM accuracy = 0.9838
+
+#########################
+Experiment 80 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.044877529144287
+
+ 1024 hidden layer nodes ELM accuracy = 0.9271
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.20870923995972
+
+ 4096 hidden layer nodes ELM accuracy = 0.9624
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.654352903366089
+
+ConvNet accuracy = 0.9721
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  33.10360336303711
+
+ConvNetSVM accuracy = 0.985
+
+#########################
+Experiment 81 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.141907930374146
+
+ 1024 hidden layer nodes ELM accuracy = 0.9232
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.93717741966248
+
+ 4096 hidden layer nodes ELM accuracy = 0.9605
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.651715993881226
+
+ConvNet accuracy = 0.975
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.77976417541504
+
+ConvNetSVM accuracy = 0.9854
+
+#########################
+Experiment 82 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.067351579666138
+
+ 1024 hidden layer nodes ELM accuracy = 0.9255
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.73321199417114
+
+ 4096 hidden layer nodes ELM accuracy = 0.9578
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.646059274673462
+
+ConvNet accuracy = 0.9723
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  34.749369859695435
+
+ConvNetSVM accuracy = 0.9836
+
+#########################
+Experiment 83 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  10.97763729095459
+
+ 1024 hidden layer nodes ELM accuracy = 0.9268
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.82247877120972
+
+ 4096 hidden layer nodes ELM accuracy = 0.9608
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.656388521194458
+
+ConvNet accuracy = 0.9719
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  32.46675229072571
+
+ConvNetSVM accuracy = 0.9855
+
+#########################
+Experiment 84 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.111147403717041
+
+ 1024 hidden layer nodes ELM accuracy = 0.9262
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.13853335380554
+
+ 4096 hidden layer nodes ELM accuracy = 0.9574
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.655389785766602
+
+ConvNet accuracy = 0.9737
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.87380290031433
+
+ConvNetSVM accuracy = 0.9853
+
+#########################
+Experiment 85 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.126611948013306
+
+ 1024 hidden layer nodes ELM accuracy = 0.9269
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.71830916404724
+
+ 4096 hidden layer nodes ELM accuracy = 0.9594
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.662243366241455
+
+ConvNet accuracy = 0.9742
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  29.44930911064148
+
+ConvNetSVM accuracy = 0.9856
+
+#########################
+Experiment 86 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.090118885040283
+
+ 1024 hidden layer nodes ELM accuracy = 0.9274
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.81678652763367
+
+ 4096 hidden layer nodes ELM accuracy = 0.9608
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.661317110061646
+
+ConvNet accuracy = 0.9742
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.055057048797607
+
+ConvNetSVM accuracy = 0.9857
+
+#########################
+Experiment 87 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.120916366577148
+
+ 1024 hidden layer nodes ELM accuracy = 0.9242
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.5558271408081
+
+ 4096 hidden layer nodes ELM accuracy = 0.9601
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.64920449256897
+
+ConvNet accuracy = 0.9717
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  34.057348012924194
+
+ConvNetSVM accuracy = 0.9865
+
+#########################
+Experiment 88 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.057204484939575
+
+ 1024 hidden layer nodes ELM accuracy = 0.9282
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.12324142456055
+
+ 4096 hidden layer nodes ELM accuracy = 0.9594
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.657693147659302
+
+ConvNet accuracy = 0.9691
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  34.336331367492676
+
+ConvNetSVM accuracy = 0.985
+
+#########################
+Experiment 89 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.096355676651001
+
+ 1024 hidden layer nodes ELM accuracy = 0.9266
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.45079803466797
+
+ 4096 hidden layer nodes ELM accuracy = 0.9609
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.667386770248413
+
+ConvNet accuracy = 0.9701
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  34.29835772514343
+
+ConvNetSVM accuracy = 0.9852
+
+#########################
+Experiment 90 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.044524908065796
+
+ 1024 hidden layer nodes ELM accuracy = 0.9264
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.467431306839
+
+ 4096 hidden layer nodes ELM accuracy = 0.9596
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.651129484176636
+
+ConvNet accuracy = 0.9766
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.500503063201904
+
+ConvNetSVM accuracy = 0.9859
+
+#########################
+Experiment 91 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.016506671905518
+
+ 1024 hidden layer nodes ELM accuracy = 0.9308
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.53278255462646
+
+ 4096 hidden layer nodes ELM accuracy = 0.9581
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.640093088150024
+
+ConvNet accuracy = 0.9718
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.126912355422974
+
+ConvNetSVM accuracy = 0.9856
+
+#########################
+Experiment 92 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.03886890411377
+
+ 1024 hidden layer nodes ELM accuracy = 0.9269
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.2168939113617
+
+ 4096 hidden layer nodes ELM accuracy = 0.9613
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.658765316009521
+
+ConvNet accuracy = 0.9746
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.213587999343872
+
+ConvNetSVM accuracy = 0.9855
+
+#########################
+Experiment 93 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.078543663024902
+
+ 1024 hidden layer nodes ELM accuracy = 0.9255
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.66521215438843
+
+ 4096 hidden layer nodes ELM accuracy = 0.9604
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.659379959106445
+
+ConvNet accuracy = 0.9733
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  30.54955744743347
+
+ConvNetSVM accuracy = 0.9862
+
+#########################
+Experiment 94 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.086406707763672
+
+ 1024 hidden layer nodes ELM accuracy = 0.9286
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  155.25725626945496
+
+ 4096 hidden layer nodes ELM accuracy = 0.9603
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.654337882995605
+
+ConvNet accuracy = 0.9729
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  33.53324317932129
+
+ConvNetSVM accuracy = 0.987
+
+#########################
+Experiment 95 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.097487449645996
+
+ 1024 hidden layer nodes ELM accuracy = 0.9276
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.57937121391296
+
+ 4096 hidden layer nodes ELM accuracy = 0.9565
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.649371147155762
+
+ConvNet accuracy = 0.9696
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  32.790446519851685
+
+ConvNetSVM accuracy = 0.9834
+
+#########################
+Experiment 96 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.121583461761475
+
+ 1024 hidden layer nodes ELM accuracy = 0.9249
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  152.82963967323303
+
+ 4096 hidden layer nodes ELM accuracy = 0.9589
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.65234637260437
+
+ConvNet accuracy = 0.9707
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  33.43428087234497
+
+ConvNetSVM accuracy = 0.9831
+
+#########################
+Experiment 97 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.061203241348267
+
+ 1024 hidden layer nodes ELM accuracy = 0.9256
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.5321819782257
+
+ 4096 hidden layer nodes ELM accuracy = 0.9601
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.667224407196045
+
+ConvNet accuracy = 0.9698
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  34.552366495132446
+
+ConvNetSVM accuracy = 0.9849
+
+#########################
+Experiment 98 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.006165742874146
+
+ 1024 hidden layer nodes ELM accuracy = 0.9257
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.37795305252075
+
+ 4096 hidden layer nodes ELM accuracy = 0.96
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.655942916870117
+
+ConvNet accuracy = 0.9737
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  34.46753406524658
+
+ConvNetSVM accuracy = 0.9858
+
+#########################
+Experiment 99 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  10.98108434677124
+
+ 1024 hidden layer nodes ELM accuracy = 0.9267
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  154.38361144065857
+
+ 4096 hidden layer nodes ELM accuracy = 0.9599
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.663361072540283
+
+ConvNet accuracy = 0.9685
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.40053939819336
+
+ConvNetSVM accuracy = 0.9835
+
+#########################
+Experiment 100 of 100 
+#########################
+
+#########################
+ 1024 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  11.001136302947998
+
+ 1024 hidden layer nodes ELM accuracy = 0.9249
+
+#########################
+ 4096 Hidden Layer Nodes ELM Train/Test
+#########################
+
+Training Time =  153.37911128997803
+
+ 4096 hidden layer nodes ELM accuracy = 0.9586
+
+#########################
+ConvNet Train/Test
+#########################
+
+Training Time =  11.660386562347412
+
+ConvNet accuracy = 0.9729
+
+#########################
+ConvNetSVM Train/Test
+#########################
+
+Training Time =  31.58754563331604
+
+ConvNetSVM accuracy = 0.9851
+
+#########################
+Printing Results
+#########################
+
+
+    LK-SVM-ACCU  GK-SVM-ACCU  LK-SVM-TIME  GK-SVM-TIME
+0       0.9393       0.9439   216.298475   362.765413
+
+     1024HL-ELM-ACCU  4096HL-ELM-ACCU  ConvNet-ACCU  ConvNetSVM-ACCU  \
+0            0.9257           0.9588        0.9752           0.9855   
+1            0.9253           0.9599        0.9759           0.9866   
+2            0.9280           0.9587        0.9758           0.9859   
+3            0.9282           0.9600        0.9725           0.9851   
+4            0.9284           0.9585        0.9729           0.9849   
+5            0.9279           0.9578        0.9744           0.9862   
+6            0.9317           0.9602        0.9703           0.9844   
+7            0.9277           0.9612        0.9749           0.9862   
+8            0.9259           0.9579        0.9726           0.9848   
+9            0.9253           0.9602        0.9716           0.9832   
+10           0.9262           0.9603        0.9698           0.9835   
+11           0.9296           0.9582        0.9736           0.9845   
+12           0.9244           0.9613        0.9665           0.9843   
+13           0.9300           0.9620        0.9733           0.9860   
+14           0.9275           0.9588        0.9754           0.9864   
+15           0.9263           0.9601        0.9727           0.9871   
+16           0.9270           0.9602        0.9732           0.9858   
+17           0.9266           0.9594        0.9732           0.9840   
+18           0.9252           0.9607        0.9715           0.9861   
+19           0.9264           0.9590        0.9732           0.9852   
+20           0.9261           0.9603        0.9719           0.9856   
+21           0.9257           0.9585        0.9735           0.9845   
+22           0.9266           0.9600        0.9721           0.9844   
+23           0.9274           0.9591        0.9712           0.9850   
+24           0.9263           0.9593        0.9725           0.9862   
+25           0.9260           0.9599        0.9731           0.9859   
+26           0.9267           0.9586        0.9735           0.9855   
+27           0.9287           0.9597        0.9740           0.9864   
+28           0.9288           0.9577        0.9751           0.9875   
+29           0.9299           0.9599        0.9722           0.9850   
+..              ...              ...           ...              ...   
+70           0.9265           0.9611        0.9738           0.9856   
+71           0.9272           0.9600        0.9751           0.9864   
+72           0.9261           0.9608        0.9750           0.9863   
+73           0.9270           0.9607        0.9745           0.9873   
+74           0.9285           0.9581        0.9715           0.9855   
+75           0.9287           0.9587        0.9713           0.9845   
+76           0.9267           0.9601        0.9752           0.9855   
+77           0.9267           0.9595        0.9731           0.9861   
+78           0.9234           0.9604        0.9709           0.9838   
+79           0.9271           0.9624        0.9721           0.9850   
+80           0.9232           0.9605        0.9750           0.9854   
+81           0.9255           0.9578        0.9723           0.9836   
+82           0.9268           0.9608        0.9719           0.9855   
+83           0.9262           0.9574        0.9737           0.9853   
+84           0.9269           0.9594        0.9742           0.9856   
+85           0.9274           0.9608        0.9742           0.9857   
+86           0.9242           0.9601        0.9717           0.9865   
+87           0.9282           0.9594        0.9691           0.9850   
+88           0.9266           0.9609        0.9701           0.9852   
+89           0.9264           0.9596        0.9766           0.9859   
+90           0.9308           0.9581        0.9718           0.9856   
+91           0.9269           0.9613        0.9746           0.9855   
+92           0.9255           0.9604        0.9733           0.9862   
+93           0.9286           0.9603        0.9729           0.9870   
+94           0.9276           0.9565        0.9696           0.9834   
+95           0.9249           0.9589        0.9707           0.9831   
+96           0.9256           0.9601        0.9698           0.9849   
+97           0.9257           0.9600        0.9737           0.9858   
+98           0.9267           0.9599        0.9685           0.9835   
+99           0.9249           0.9586        0.9729           0.9851   
+
+    1024HL-ELM-TIME  4096HL-ELM-TIME  ConvNet-TIME  ConvNetSVM-TIME  
+0         11.181932       157.126688     11.826030        26.254854  
+1         11.092565       154.549422     11.654366        29.164332  
+2         11.113904       154.808020     11.674930        28.561516  
+3         11.143174       155.258361     11.649714        31.887412  
+4         11.204087       155.677234     11.647471        30.092286  
+5         11.139780       155.250025     11.643808        30.020857  
+6         11.187208       155.905485     11.651900        30.354070  
+7         11.081986       155.565182     11.668392        30.625151  
+8         11.144455       154.234841     11.661429        31.819886  
+9         11.049253       155.066163     11.677377        32.317722  
+10        11.065437       154.423859     11.655478        31.734461  
+11        11.072577       155.209115     11.667248        34.617249  
+12        11.052584       154.457908     11.645407        36.861873  
+13        11.049993       153.757995     11.648660        31.371868  
+14        11.106164       153.817502     11.672744        29.005145  
+15        11.125119       154.807399     11.662627        31.824166  
+16        11.087805       155.678731     11.648543        30.269431  
+17        11.030463       155.408814     11.664506        31.158720  
+18        11.127208       155.695064     11.656847        30.292713  
+19        11.139939       155.404507     11.653547        32.591255  
+20        11.174063       155.055206     11.663295        28.478056  
+21        11.044607       160.100925     11.654724        29.468478  
+22        12.157135       154.363525     11.657709        32.037025  
+23        11.162119       154.313575     11.642558        33.063266  
+24        11.052688       154.600578     11.668258        29.084058  
+25        11.071351       153.095595     11.651716        28.727885  
+26        11.158030       154.813415     11.653808        30.654251  
+27        11.126308       153.917643     11.664100        30.910469  
+28        11.156235       155.026348     11.656038        27.171415  
+29        11.086921       155.101320     11.667627        32.848031  
+..              ...              ...           ...              ...  
+70        11.081843       153.982303     11.658099        30.560382  
+71        11.129182       155.079840     11.647272        29.293999  
+72        11.124841       154.395458     11.662194        27.172329  
+73        11.053836       154.156657     11.661343        31.029422  
+74        11.056742       154.838613     11.651608        30.133686  
+75        11.124819       154.040766     11.661796        29.830319  
+76        11.033571       152.903655     11.651204        28.087435  
+77        11.022160       154.231445     11.648375        34.782524  
+78        11.133423       154.156611     11.658408        31.752915  
+79        11.044878       155.208709     11.654353        33.103603  
+80        11.141908       153.937177     11.651716        31.779764  
+81        11.067352       153.733212     11.646059        34.749370  
+82        10.977637       153.822479     11.656389        32.466752  
+83        11.111147       154.138533     11.655390        31.873803  
+84        11.126612       153.718309     11.662243        29.449309  
+85        11.090119       153.816787     11.661317        30.055057  
+86        11.120916       155.555827     11.649204        34.057348  
+87        11.057204       155.123241     11.657693        34.336331  
+88        11.096356       153.450798     11.667387        34.298358  
+89        11.044525       154.467431     11.651129        30.500503  
+90        11.016507       154.532783     11.640093        30.126912  
+91        11.038869       154.216894     11.658765        30.213588  
+92        11.078544       155.665212     11.659380        30.549557  
+93        11.086407       155.257256     11.654338        33.533243  
+94        11.097487       154.579371     11.649371        32.790447  
+95        11.121583       152.829640     11.652346        33.434281  
+96        11.061203       154.532182     11.667224        34.552366  
+97        11.006166       154.377953     11.655943        34.467534  
+98        10.981084       154.383611     11.663361        31.400539  
+99        11.001136       153.379111     11.660387        31.587546  
+
+[100 rows x 8 columns] 
+
+       1024HL-ELM-ACCU  4096HL-ELM-ACCU  ConvNet-ACCU  ConvNetSVM-ACCU  \
+count       100.000000       100.000000    100.000000       100.000000   
+mean          0.926966         0.959557      0.972635         0.985254   
+std           0.001753         0.001247      0.001990         0.001043   
+min           0.922900         0.956500      0.966500         0.983100   
+25%           0.925900         0.958675      0.971475         0.984500   
+50%           0.926700         0.959650      0.972900         0.985400   
+75%           0.928200         0.960300      0.973925         0.985925   
+max           0.931700         0.962400      0.976600         0.987900   
+
+       1024HL-ELM-TIME  4096HL-ELM-TIME  ConvNet-TIME  ConvNetSVM-TIME  
+count       100.000000       100.000000    100.000000       100.000000  
+mean         11.107254       154.468571     11.659510        31.081429  
+std           0.116395         0.990447      0.022177         2.069224  
+min          10.977637       152.590633     11.640093        26.254854  
+25%          11.057089       153.932335     11.651157        29.834438  
+50%          11.092777       154.389535     11.655732        30.939541  
+75%          11.129368       155.002402     11.661853        32.552852  
+max          12.157135       160.100925     11.826030        36.861873  
+
+#########################
+Stoping
+#########################
+
+(tensorflow)dlm@pc-aero-01:~/projects/CIn/ConvNetSVM$ 
+(tensorflow)dlm@pc-aero-01:~/projects/CIn/ConvNetSVM$ 
+(tensorflow)dlm@pc-aero-01:~/projects/CIn/ConvNetSVM$ 
+(tensorflow)dlm@pc-aero-01:~/projects/CIn/ConvNetSVM$ 
+
